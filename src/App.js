@@ -10,6 +10,8 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route exact path="/" element={<CreateQuestion/>} />
+
         <Route exact path="/createWord" element={<CreateWord/>} />
         <Route exact path="/createQuestion" element={<CreateQuestion/>} />
         <Route exact path="/addExample" element={<AddExample/>} />
