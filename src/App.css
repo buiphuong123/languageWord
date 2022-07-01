@@ -1,17 +1,56 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
-}
-.container {
+} */
+/* .container {
   background:  #cccccc;
   width: 100%;
   min-height: 100vh;
+} */
+.rowstyle {
+  flex-direction: row;
+  margin-left: 20px;
 }
+.label {
+  font-size: 20px;
+}
+.uploadfile {
+  margin-left: 20px;
+}
+.space {
+  margin-top: 30px;
+}
+
+.button_create {
+  justify-content: center;
+  align-items: center;
+  margin-left: 400px;
+}
+
+.rowcontent {
+  flex-direction: row;
+}
+
 .content {
-  display: flex;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* padding:20px; */
+}
+.contentinput {
   justify-content: center;
   align-items: center;
 }
+
+.descontent {
+  display: flex;
+  flex-direction: row;
+}
+.descontentss{
+  flex-direction: row;
+ display: flex;
+}
+
 .app-wrapper {
   background-color: #fff;
   min-width: 500px;
@@ -38,10 +77,11 @@
   margin-bottom: 30px;
 }
 .input {
+  margin-left: 20px;
   height: 30px;
   font-size: 16px;
   outline: none;
-  width: 100%;
+  min-width: 50%;
   border-top-style: none;
   border-left-style: none;
   border-right-style: none;
@@ -100,6 +140,13 @@ button:active {
   flex-direction: row;
   
 }
+.topstyle{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.mt-0 {
+  margin-top: 300px;
+}
 .imagePost {
   height: 200px; 
   width: 200px; 
@@ -109,10 +156,20 @@ button:active {
   /* justify-content: center; */
 }
 #lang {
-  width: 200px;
+  width: 100px;
   /* margin-left: 100px; */
   position: absolute;  
-  left: 150px;
+  /* left: 80px; */
+  margin-left: 20px;
+  font-size: 16px;
+  padding: 5px;
+}
+.lang1 {
+  width: 300px;
+  /* margin-left: 100px; */
+  position: absolute;  
+  /* left: 80px; */
+  margin-left: 20px;
   font-size: 16px;
   padding: 5px;
 }
