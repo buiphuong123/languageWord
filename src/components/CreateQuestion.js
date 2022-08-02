@@ -41,7 +41,7 @@ const CreateQuestion = () => {
         })
     };
     useEffect(() => {
-        axios.post('https://nameless-spire-67072.herokuapp.com/language/getNameGrammar', {
+        axios.post('https://languagess.vercel.app/language/getNameGrammar', {
             "level": level,
     },{
             headers: {
@@ -58,7 +58,7 @@ const CreateQuestion = () => {
             })
     }, []);
     useEffect(() => {
-        axios.post('https://nameless-spire-67072.herokuapp.com/language/getNameGrammar', {
+        axios.post('https://languagess.vercel.app/language/getNameGrammar', {
             "level": level,
     },{
             headers: {
