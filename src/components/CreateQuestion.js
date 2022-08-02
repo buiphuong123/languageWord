@@ -6,7 +6,7 @@ const CreateQuestion = () => {
     const [dataGrammar, setDataGrammar] = useState([]);
     const [valueSelect, setValueSelect] = useState({});
     const [explain, setExplain] = useState("");
-    const [level, setLevel] = useState(5);
+    const [level, setLevel] = useState(3);
     const [lession, setLession] = useState(1);
     const [valueAnswer, setValueAnswer] = useState(0);
     const createQuestion = () => {
@@ -41,7 +41,7 @@ const CreateQuestion = () => {
         })
     };
     useEffect(() => {
-        axios.post('http://192.168.1.72:3002/language/getNameGrammar', {
+        axios.post('https://nameless-spire-67072.herokuapp.com/language/getNameGrammar', {
             "level": level,
     },{
             headers: {
@@ -50,7 +50,7 @@ const CreateQuestion = () => {
             }
         })
             .then((response) => {
-                console.log('data daynhe',response.data);
+                // console.log('data daynhe',response.data);
                 setDataGrammar(response.data.concat({}));
             })
             .catch(function (error) {
@@ -85,9 +85,9 @@ const CreateQuestion = () => {
 
                     <div className="email">
                         <b className="label">Explain</b>
-                        <input
+                        <textarea 
                             className="input"
-                            type="text"
+                            type="text" 
                             name="explain"
                             value={explain}
                             onChange={handleChangeInput}
