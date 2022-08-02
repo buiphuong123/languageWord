@@ -6,7 +6,7 @@ const CreateQuestion = () => {
     const [dataGrammar, setDataGrammar] = useState([]);
     const [valueSelect, setValueSelect] = useState({});
     const [explain, setExplain] = useState("");
-    const [level, setLevel] = useState(3);
+    const [level, setLevel] = useState(5);
     const [lession, setLession] = useState(1);
     const [valueAnswer, setValueAnswer] = useState(0);
     const createQuestion = () => {
@@ -18,7 +18,7 @@ const CreateQuestion = () => {
         axios.post("https://api.cloudinary.com/v1_1/languageword/image/upload", formData).then((response) => {
             console.log(response);
             console.log(response.data.url);
-            axios.post('http://192.168.1.72:3002/language/readImage1', {
+            axios.post('https://nameless-spire-67072.herokuapp.com/language/readImage1', {
                 "urlImage": response.data.url,
                 "explain": explain,
                 "answer": valueAnswer,
@@ -57,6 +57,23 @@ const CreateQuestion = () => {
                 throw error;
             })
     }, []);
+    useEffect(() => {
+        axios.post('https://nameless-spire-67072.herokuapp.com/language/getNameGrammar', {
+            "level": level,
+    },{
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        })
+            .then((response) => {
+                console.log('data daynhe',response.data);
+                setDataGrammar(response.data.concat({}));
+            })
+            .catch(function (error) {
+                throw error;
+            })
+    }, [level]);
     const handleChange = e => setValueSelect(e.target.value);
     const handleChangeAnswer = e => setValueAnswer(e.target.value);
     const handleChangeLevel = e => setLevel(e.target.value);
